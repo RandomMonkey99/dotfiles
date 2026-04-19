@@ -1,6 +1,6 @@
 # 🌲 Evershell
 
-
+![](https://raw.githubusercontent.com/RandomMonkey99/dotfiles/refs/heads/main/.github/assets/banner.png)
 
 ## **Font:** **<https://www.programmingfonts.org/#departure-mono>**
 
