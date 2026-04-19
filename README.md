@@ -1,9 +1,7 @@
 <h1 align="center"> 🌲 Evershell </h1>
 
+![GitHub Repo stars](https://img.shields.io/github/stars/randommonkey99/dotfiles?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=23282a&color=%23A7C080)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/randommonkey99/dotfiles?style=for-the-badge&labelColor=D3C6AA&color=A7C080)
-![GitHub Repo stars](https://img.shields.io/github/stars/randommonkey99/dotfiles?style=for-the-badge&labelColor=D3C6AA&color=A7C080)
-![GitHub repo size](https://img.shields.io/github/repo-size/randommonkey99/dotfiles?style=for-the-badge&labelColor=D3C6AA&color=A7C080)
 
 ![](https://raw.githubusercontent.com/RandomMonkey99/dotfiles/refs/heads/main/.github/assets/banner.png)
 
