@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Departure';
+    src: url('/usr/share/fonts/OTF/DepartureMonoNerdFontMono-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Departure';
+}
+.window-appicon {
+    display:none;
+}
+.letterpress {
+    display: none;
+}
+.agent-status-container {
+    display: none !important;
+
+}

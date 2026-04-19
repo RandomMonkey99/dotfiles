@@ -1,0 +1,16 @@
+@theme "./themes/hyprltm-net.rasi"
+
+window {
+    location:   south;
+anchor:   north;
+height:    50%;
+width:   50%;
+orientation:   horizontal;
+children:   [mainbox];
+x-offset:   0px;        
+y-offset:   10px;
+}
+
+configuration {
+    kb-element-next: "Tab";
+}

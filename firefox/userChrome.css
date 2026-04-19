@@ -1,0 +1,52 @@
+#nav-bar {
+    border-top: none !important;
+}
+
+.urlbar[focused] {
+    caret-color: transparent;
+}
+
+.urlbar[focused="true"]>.urlbar-background,
+
+.urlbar[open="true"]>.urlbar-background,
+
+.urlbar,
+
+.urlbar-background {
+
+    box-shadow: none !important;
+
+    outline: none !important;
+
+}
+
+.urlbarView-row[selected] {
+    background-color: #23282a !important;
+    /* Change highlight color */
+    color: white !important;
+    /* Change text color */
+}
+
+#back-button image {
+    list-style-image: url("chrome://global/skin/icons/arrow-left.svg") !important;
+}
+
+#forward-button image {
+    list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;
+}
+
+#navigator-toolbox {
+    border-bottom: none !important;
+}
+
+#urlbar-searchmode-switcher {
+    display: none;
+}
+
+.titlebar-close {
+    display: none;
+}
+
+.tab-icon-image[src="chrome://branding/content/icon32.png"] { 
+content: url("./assets/image.png") !important; 
+}

@@ -1,0 +1,51 @@
+* {
+  all: unset;
+}
+
+.clock-box {
+  padding: 16px 24px;
+  background: #23282a;
+  border-radius: 12px;
+  border: 2px solid #A7C080;
+}
+
+.button-box {
+  background: #23282a;
+  border-radius: 12px;
+  border: 2px solid #A7C080;
+}
+
+.clock-time {
+  font-size: 64px;
+  font-weight: bold;
+  color: #D3C6AA;
+  font-family: "DepartureMono Nerd Font";
+}
+
+.circular-progress {
+  background-color: #ffb20b;
+}
+
+label {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.user-label {
+  margin-bottom: 0px;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+}
+
+
+.avatar-box {
+  min-width: 100px;
+  min-height: 100px;
+  background-image: url("file:///home/abel/.config/hypr/face.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}

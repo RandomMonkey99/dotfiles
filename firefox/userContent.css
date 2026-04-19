@@ -1,0 +1,44 @@
+@-moz-document url-prefix("about:home") {
+    .search-inner-wrapper {
+        display: none !important
+    }
+
+    .search-wrapper .search-inner-wrapper {
+        display: none !important;
+    }
+
+    .wordmark {
+        display: none !important;
+    }
+
+    .logo{
+        background: none !important;
+    }
+
+    .personalizeButtonWrapper {
+        display: none !important;
+    }
+}
+
+@-moz-document url-prefix("about:newtab") {
+    .search-inner-wrapper {
+        display: none !important
+    }
+
+    .search-wrapper .search-inner-wrapper {
+        display: none !important;
+    }
+
+    .wordmark {
+        display: none !important;
+    }
+
+    .personalizeButtonWrapper {
+        display: none !important;
+    }
+
+    .logo{
+        background: none !important;
+    }
+}
+

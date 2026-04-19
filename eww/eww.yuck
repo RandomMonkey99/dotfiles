@@ -1,0 +1,90 @@
+;;; ─────────────────────────────────────────
+;;;  Polls
+;;; ─────────────────────────────────────────
+
+(defpoll time     :interval "1s"  `date '+%H %M'`)
+(defpoll date     :interval "60s" `date '+%A, %d %B'`)
+(defpoll uptime   :interval "60s" `awk '{printf "Uptime: %d:%d\n", $1/3600, ($1%3600)/60}' /proc/uptime`)
+(defpoll day      :interval "1m"
+  `echo "$(($(date +%s) - $(date -d "00:00:00" +%s)
+    )
+  ) * 100 / 86400" | bc -l`)
+(defpoll battery  :interval "10s"
+`awk '{sum+=$1} END {printf "%d", sum/NR}' /sys/class/power_supply/BAT*/capacity`)
+
+
+;;; ─────────────────────────────────────────
+;;;  Widgets
+;;; ─────────────────────────────────────────
+
+(defwidget clock-widget []
+  (box :orientation "vertical"
+    :halign "center"
+    :valign "center"
+    :class "clock-box"
+    (label :class "clock-time" :text time)
+  )
+)
+;;; ─────────────────────────────────────────
+;;;  Windows
+;;; ───────────────────────────────────/path/to/image.png──────
+
+(defwindow desktop-clock
+  :monitor '[1, 0]'
+  :stacking "bg"
+  :focusable "false"
+  :geometry (geometry
+    :x "20px"   :y "20px"
+    :width "300px" :height "120px"
+  :anchor "bottom right")
+  (clock-widget)
+)
+
+(defwindow day-counter
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+    :x "-25px"  :y "150px"
+    :width "300px" :height "120px"
+  :anchor "bottom right")
+  (box :orientation "vertical"
+    :halign "center"
+    :valign "center"
+    :class "clock-box"
+    (circular-progress
+      :clockwise false
+      :value day
+    :thickness 50)
+  )
+)
+
+(defwindow battery
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+    :x "-28px"  :y "150px"
+    :width "300px" :height "120px"
+  :anchor "bottom right")
+  (box :orientation "vertical"
+    :halign "center"
+    :valign "center"
+    :class "clock-box"
+    (circular-progress
+      :clockwise false
+      :value battery
+      :thickness 50
+    :class "batt")
+  )
+)
+
+(defwindow button
+  :monitor 0
+  :stacking "bg"
+  :focusable "false"
+  :geometry (geometry
+    :x "42px"   :y "150px"
+    :width "120px" :height "120px"
+    :anchor "bottom right")
+  (button :class "button-box"
+          :onclick "~/.local/bin/zen"
+    (label :text "" :style "font-size: 80px")))

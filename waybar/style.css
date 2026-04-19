@@ -1,0 +1,163 @@
+
+* {
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: "DepartureMono Nerd Font Mono", monospace;
+
+}
+
+@keyframes workspace {
+    from {
+        font-size: 8px;
+    }
+
+    to {
+        font-size: 10px;
+    }
+}
+
+tooltip {
+    background: #23282a;
+}
+
+#workspaces {
+    border: none;
+    padding-right: 0px;
+    padding-left: 0px;
+
+    border-bottom-right-radius: 10px;
+}
+
+#custom-music {
+
+    border: none;
+    color: #d3c6aa;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: #d3c6aa;
+    background-color: transparent;
+
+}
+
+#workspaces button {
+    color: #d3c6aa;
+    background-color: transparent;
+    font-size: 8px;
+
+}
+
+#workspaces button.active {
+    /*animation: workspace 0.5s;*/
+    font-size: 10px;
+}
+
+#waybar.top {
+    background: none;
+}
+
+#window.empty {
+    background: none;
+    border: 10px solid white;
+}
+
+#waybar.top .modules-right {
+    border: none;
+    color: #d3c6aa;
+    background-color: #23282a;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom: #A7C080 solid 2px;
+    border-left: #A7C080 solid 2px;
+}
+
+#waybar.top .modules-center {
+    border: none;
+    color: #d3c6aa;
+    background-color: #23282a;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: #A7C080 solid 2px;
+    border-right: #A7C080 solid 2px;
+    border-left: #A7C080 solid 2px;
+}
+
+#waybar.top .modules-left {
+    border: none;
+    color: #d3c6aa;
+    background-color: #23282a;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: #A7C080 solid 2px;
+    border-right: #A7C080 solid 2px;
+
+}
+window#waybar.firefox
+#waybar.left {
+    background-color: #23282a;
+    background: #23282a;
+}
+
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background: black;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: #d3c6aa;
+}
+
+#window {
+    border: none;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    border-bottom-right-radius: 10px;
+}
+
+/* vswaybar:modpad */
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-updates,
+#custom-weather,
+#custom-swaync,
+#custom-power {
+    padding: 0 8px;
+}
+
+#custom-arch {
+    padding: 0 10px 0 15px;
+}

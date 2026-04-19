@@ -1,0 +1,137 @@
+{
+    "position": "top",
+    "height": 20,
+    "spacing": 10,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "layer": "overlay",
+    "output": "",
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "custom/music",
+        "pulseaudio/slider",
+        "network",
+        "battery",
+        "clock",
+        "custom/notifications"
+    ],
+    "custom/notifications": {
+        "format": "",
+        "on-click": "swaync-client -t"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "██",
+            "default": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "": "Desktop"
+        },
+        "separate-outputs": true,
+        "max-length": 20,
+        "tooltip": false
+    },
+    "battery": {
+        "interval": 60,
+        "format": "{icon}",
+        "tooltip-format": "{timeTo} — {capacity}%",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        }
+    },
+    "custom/music": {
+        "format": "{text}",
+        "format-icons": {
+            // "Playing": " ", // Uncomment if not using caway
+            "Paused": " ",
+            "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
+        },
+        "escape": true,
+        "tooltip": true,
+        "exec": "~/.config/waybar/scripts/caway",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "on-click-right": "spotify",
+        "max-length": 35
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "󰤭",
+        "format-wifi": "󰤨",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "󰤭", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click-right": "pypr menu \"󰤨 Network\"",
+        "on-click": "nmcli radio wifi $(nmcli radio wifi | grep -q enabled && echo off || echo on)"
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%H %M}",
+        "max-length": 25,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+    },
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "format": "{}",
+        "return-type": "json",
+        "interval": 300,
+        "tooltip": "true"
+    }
+}

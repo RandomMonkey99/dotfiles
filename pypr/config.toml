@@ -1,0 +1,63 @@
+[pyprland]
+
+plugins = [
+    "scratchpads",
+    "magnify",
+    "expose",
+    "shortcuts_menu"
+]
+
+[scratchpads.term]
+
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "75% 60%"
+animation = "fromTop"
+
+[scratchpads.volume]
+
+command = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
+size = "40% 90%"
+animation = "fromRight"
+lazy = true
+
+[shortcuts_menu]
+submenu_end = ">"
+engine = "rofi"
+parameters = "-dmenu -i -p '[prompt]' -theme '/home/user/.config/rofi/power.rasi'"
+
+
+[shortcuts_menu.entries." Hyprland Config"]
+" Hyprland" = 'code ~/.config/hypr/hyprland.conf'
+" Pyprland" = "code ~/.config/pypr/config.toml"
+
+[shortcuts_menu.entries." Rofi Config"]
+" Power.rasi" = "code ~/.config/rofi/power.rasi"
+"󰤨 Network.rasi" = "code ~/.config/rofi/network.rasi"
+
+
+[shortcuts_menu.entries." Power"]
+
+" Shutdown" = 'shutdown'
+" Restart" = 'reboot'
+"󰈆 Logout" = 'command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit'
+
+[shortcuts_menu.entries."󰤨 Network"]
+"Connect WiFi" = [
+    {name="ssid", command="nmcli -t -f SSID dev wifi list | sort -u"},
+    {name="password", command="rofi -dmenu -password -p 'Password' -lines 0 -theme /home/abel/.config/rofi/network.rasi"},
+    "nmcli dev wifi connect '[ssid]' password '[password]'"
+]
+
+"Disconnect" = [
+    {name="interface", command="nmcli -t -f DEVICE,STATE dev | grep ':connected' | cut -d: -f1"},
+    "nmcli dev disconnect '[interface]'"
+]
+
+"Toggle WiFi" = "nmcli radio wifi $(nmcli radio wifi | grep -q enabled && echo off || echo on)"
+
+"Toggle Ethernet" = [
+    {name="iface", command="nmcli -t -f DEVICE,TYPE dev | grep ':ethernet' | cut -d: -f1"},
+    "nmcli dev $(nmcli dev status | grep '[iface]' | grep -q connected && echo disconnect || echo connect) '[iface]'"
+]

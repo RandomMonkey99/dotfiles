@@ -1,0 +1,30 @@
+@theme "./themes/hyprltm-net.rasi"
+
+* {
+    font: "DepartureMono Nerd Font 11";
+}
+
+window {
+    width: 360px;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+listview {
+    lines: 5;
+    spacing: 6px;
+}
+
+element {
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+element selected {
+    background-color: #313244;
+}
+
+/* Make the first entry (title+art) bigger */
+element-icon {
+    size: 96px;
+}
