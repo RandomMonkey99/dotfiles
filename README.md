@@ -1,4 +1,5 @@
-# 🌲 Everforest Dotfiles ![]()
+# 🌲 Evershell
+
 
 
 ## **Font:** **<https://www.programmingfonts.org/#departure-mono>**
