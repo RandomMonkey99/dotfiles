@@ -21,7 +21,7 @@
     transparent: rgba(0,0,0,0);
 
     ltmnight0: #23282a; /* Background */
-    ltmnight1: #A7C080; /* Current Line / Secondary Background */
+    ltmnight1: #00000000; /* Current Line / Secondary Background */
     ltmnight2: #D3C6AA; /* Foreground Text */
     ltmnight3: #D3C6AA; /* Comment / Faded Foreground */
     ltmnight4: #E67E80; /* Red / Errors */
