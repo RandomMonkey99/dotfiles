@@ -33,7 +33,7 @@ chosen=$(printf "%b" "$entries" | rofi \
     -i \
     -p "" \
     -show-icons \
-    -theme /home/user/.config/rofi/network.rasi \
+    -theme ~/.config/rofi/network.rasi \
     -theme-str 'window { width: 90%; location: south; anchor: south; y-offset: 60px; }' \
     -theme-str 'mainbox { orientation: vertical; }' \
     -theme-str 'listview { layout: horizontal; scrolling: horizontal; columns: 9999; lines: 7; spacing: 10px; padding: 10px; }' \
