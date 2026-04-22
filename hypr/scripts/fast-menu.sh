@@ -196,7 +196,7 @@ SELECTION=$(printf '%s\n' "${LABELS[@]}" | rofi \
     -dmenu \
     -i \
     -p "󰍉" \
-    -theme /home/user/.config/rofi/power.rasi \
+    -theme ~/.config/rofi/power.rasi \
     -format "s" \
     2>/dev/null)
 
